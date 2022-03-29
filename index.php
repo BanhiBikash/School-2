@@ -16,7 +16,8 @@
 </head>
 <body>
     <!-- header -->
-    
+    <?php include('header.html'); ?>
+
     <!-- land div -->
     <div id="lander">
 
