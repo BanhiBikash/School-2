@@ -18,7 +18,7 @@
     <!-- header -->
     
     <!-- land div -->
-    <div style="background-image:url('img/land.jpg');" id="lander">
+    <div id="lander">
 
     <div id="principal">
         <img src="img/Principal.jpg" alt="">
@@ -77,6 +77,7 @@
     </div>
 
     <!-- footer -->
+    <?php include('footer.php') ?>
 </body>
 <script src="js/index.js"></script>
 </html>
