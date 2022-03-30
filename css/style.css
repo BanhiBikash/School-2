@@ -319,5 +319,6 @@ footer h5 p {
         position: relative;
         width: 100%;
         margin-top: 0;
+        font-size: 14px;
     }
 }

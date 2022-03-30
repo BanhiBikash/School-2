@@ -5,8 +5,9 @@
 
 header {
     box-shadow: 0rem 0.02rem 0.3rem 0.03rem black;
-    width: 120vw;
+    width: 100vw;
     height: 18.5rem;
+    overflow: hidden;
 }
 
 .contact-info {
@@ -94,8 +95,8 @@ header #main-nav {
 header #main-nav ul {
     width: fit-content;
     position: relative;
-    left: 40vw;
-    bottom: 3rem;
+    left: 24vw;
+    bottom: 5vw;
     list-style: none;
     display: flex;
     justify-content: flex-end;
@@ -131,40 +132,6 @@ header .nav-btn {
     position: absolute;
     top: 10em;
     right: 12vw;
-}
-
-
-/* --------------------------------------------------------------------------------------------------------
-----------------------------responsivness----------------------------------------------------------- */
-
-@media screen and (max-width: 1200px) and (min-width: 1100px) {
-    html {
-        font-size: 61%;
-    }
-}
-
-@media screen and (max-width: 1100px) and (min-width: 1000px) {
-    html {
-        font-size: 60%;
-    }
-}
-
-@media screen and (max-width: 1000px) and (min-width: 900px) {
-    html {
-        font-size: 59%;
-    }
-}
-
-@media screen and (max-width: 900px) and (min-width: 800px) {
-    html {
-        font-size: 58%;
-    }
-}
-
-@media screen and (max-width: 800px) and (min-width: 750px) {
-    html {
-        font-size: 57.5%;
-    }
 }
 
 @media screen and (max-width: 750px) and (min-width: 700px) {
