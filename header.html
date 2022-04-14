@@ -15,30 +15,31 @@
 <body>
     <header>
         <div class="contact-info">
-            <p class="phone">📞: 6546546546</p>
-            <p class="email">✉ : mcit1234@mcitmail.com</p>
+            <pre class="phone">📞: 6546546546</pre>
+            <pre class="email">✉ : mcit1234@mcitmail.com</pre>
         </div>
         <div class="logo">
-            <img src="https://img.freepik.com/free-vector/university-school-emblem-logo-design_417238-135.jpg" alt="" srcset="">
+            <div class="img-container"><img src="https://img.freepik.com/free-vector/university-school-emblem-logo-design_417238-135.jpg" alt="" srcset=""></div>
             <p class="logo-name">Lorem, ipsum dolor.</p>
             <p class="moto">Lorem ipsum dolor sit amet consectetur.</p>
         </div>
-        <div class="nav-btn" title="Show/Hide">
+        <div class="nav-btn" title="Show/Hide" style="display: none;">
             <i class="fa-solid fa-bars fa-4x"></i>
         </div>
-        <nav id="main-nav">
-            <ul class="nav-container active">
-                <li class="nav-item" id="home"><a href="#lander">Home</a></li>
-                <li class="nav-item" id="item-2"><a href="#about">About Us</a></li>
-                <li class="nav-item" id="item-3"><a href="#vision">Our Vision</a></li>
-                <li class="nav-item" id="item-4"><a href="#achieve">Achievements</a></li>
-                <li class="nav-item" id="item-5"><a href="#contact">Contact Us</a></li>
-                <li class="nav-item" id="item-6"><a href="#">Gallery</a></li>
-            </ul>
-        </nav>
+        <div class="nav">
+            <nav id="main-nav">
+                <div class="nav-item" id="home"><a href="index.php">Home</a></div>
+                <div class="nav-item" id="item-2"><a href="#achieve">Achievements</a></div>
+                <div class="nav-item" id="item-3"><a href="#vision">Vision</a></div>
+                <div class="nav-item" id="item-4"><a href="#contact">Contact</a></div>
+                <div class="nav-item" id="item-5"><a href="gallery.html">Gallery</a></div>
+            </nav>
+        </div>
+        <!-- clears the queue of float elements to this element which is used at logo-->
+        <div class="keep-open" style="clear: both;"></div>
     </header>
-    <div class="h-before"></div>
-    <script src="js/header.js"></script>
+    <!-- <div class="h-before"></div> -->
 </body>
+<script src="js/header.js"></script>
 
 </html>

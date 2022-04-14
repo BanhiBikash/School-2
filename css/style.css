@@ -11,7 +11,7 @@ body {
 }
 
 #lander {
-    background-image: url('../img/land.jpg');
+    /* background-image: url('../img/land.jpg'); */
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,11 +49,12 @@ body {
 /* notice start */
 
 .notice-container {
-    background-color: rgb(241, 225, 128);
+    border:2px solid black;
     height: 535px;
     width: 560px;
     margin: 2.5vw;
     overflow: hidden;
+    border-top: none;
 }
 
 .notice-container h2 {
@@ -61,11 +62,11 @@ body {
     line-height: 3.5rem;
     text-align: center;
     color: white;
+    width: 100%;
 }
 
 .notice-container .notice-content {
     padding: top 30rem;
-    ;
     height: 500px;
     overflow: scroll;
     scroll-behavior: smooth;
@@ -89,9 +90,9 @@ body {
 
 .notice .headline {
     font-size: 17px;
-    font-weight: bold;
-    color: red;
+    font-weight: bolder;
     padding-bottom: 1rem;
+    color: darkcyan;
 }
 
 .notice .docs img {
@@ -318,6 +319,155 @@ body {
     transform: scaleX(0.5);
 }
 
+/* vision */
+
+
+#vision {
+    text-align: center;
+}
+
+#vision h1 {
+    color: black;
+    margin: 40px;
+}
+
+#vision #autoWidth {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+#vision #autoWidth::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+#vision .box {
+    height: 400px;
+    width: 250px;
+    overflow: hidden;
+    margin: 30px;
+}
+
+#vision .slide-img {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vision .slide-img img {
+    width: 230px;
+    height:230px;
+    transition: 0.5s;
+}
+
+#vision .slide-img img:hover{
+    width: 250px;
+    height: 250px;
+}
+
+#vision .detail-head {
+    line-height: 3em;
+}
+
+#vision .detail {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    font-size: 1ko5px;
+}
+
+
+#vision #detail p{
+    margin: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 53%;
+    color: #07314f;
+}
+
+/* contact us */
+#contact{
+    text-align: center;
+}
+
+#contact h1{
+    margin: 2.5vw;
+}
+
+#contact #container{
+    width: 95vw;
+    margin: 2.5vw;
+    display: flex;
+    justify-content: space-between;
+} 
+
+#contact #container #googlemap{
+    width: 50%;
+    height: 350px;
+    background-color: #002349;
+}
+
+#contact #container #googlemap iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+#contact #container form{
+    width: 45%;
+    height: 350px;
+   padding: 0 2.5% 0 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+#contact #container form .form-group{
+    text-align: left;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact #container form .form-group label{
+    font-size: 15px;
+}
+
+#contact #container form .form-group textarea{
+    height: 150px;
+}
+
+#contact #container form button{
+    color: white;
+    cursor: pointer;
+    width: 100px;
+    margin: 0 auto 0 auto;
+    background-color: rgb(231, 107, 69);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#contact #container form button:hover{
+    color: rgb(231, 107, 69);
+    background-color: #fff;
+    border: 1px solid rgb(231, 107, 69);
+}
 
 /* footer start */
 
@@ -353,6 +503,7 @@ footer .item p,
 pre {
     line-height: 10px;
     margin-top: 10px;
+    font-size: 15px;
 }
 
 footer .container {
@@ -381,6 +532,7 @@ footer .social {
     display: flex;
     gap: 7px;
     margin: 20px 0 0 0;
+    font-size: 20px;
 }
 
 footer h5 {

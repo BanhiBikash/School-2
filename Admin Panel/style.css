@@ -12,18 +12,27 @@ body {
     width: 100vw;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+#head{
+    font-size: 30px;
+    color: dodgerblue;
+    font-weight: 600;
+    margin:30px auto 30px auto;
 }
 
 .big-container {
     display: flex;
     width: 100vw;
     height: fit-content;
+    text-align: left;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .bttn-group {
@@ -179,6 +188,10 @@ body {
     color: #d51a1a;
 }
 
+.wrapper{
+    width: 500px;
+}
+
 @media (max-width:1250px) {
     .notice-container {
         width: 45vw;
@@ -192,5 +205,9 @@ body {
 @media(max-width: 600px) {
     body {
         overflow-x: hidden;
+    }
+
+    .wrapper{
+        width: 320px;
     }
 }

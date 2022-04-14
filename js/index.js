@@ -50,7 +50,8 @@ let itemCont = document.querySelector('#achieve #autoWidth');
 let leftArrow = document.querySelector('#achieve #left-arrow');
 let rightArrow = document.querySelector('#achieve #right-arrow');
 let previousTimeStamp;
-let speed = 600;
+let speed = 80;
+id = '';
 
 function step(timestamp) {
 
@@ -62,7 +63,12 @@ function step(timestamp) {
         return;
     }
 
-    itemCont.scrollBy(1, 0);
+    itemCont.scrollBy(3, 0);
+
+    if (itemCont.offsetWidth + itemCont.scrollLeft >= itemCont.scrollWidth) {
+        console.log('scrolled to bottom')
+        itemCont.scrollLeft = 0;
+    }
 
     previousTimeStamp = timestamp;
 }

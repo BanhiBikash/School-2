@@ -17,7 +17,10 @@ date_default_timezone_set('Asia/Kolkata');
 
 <body>
     <!-- header -->
+    <?php include('header.html') ?>
 
+    <!-- banner -->
+    <?php include('banner.html') ?>
 
     <!-- land div -->
     <div id="lander">
@@ -45,9 +48,8 @@ date_default_timezone_set('Asia/Kolkata');
                 $query = mysqli_query($conn, $sql);
 
                 while ($row = mysqli_fetch_assoc($query)) {
-
-                    //show the notice if not hidden and display date has reached and not expired
-                    if (date("Y-m-d H-i-s") >= $row['display_date'] && date("Y-m-d H-i-s") <= $row['end_date'] && $row['hide'] == '0' && $row['reviewed'] == '1') {
+                    //show the notice if not hidden and display date has reached and not expired && date("Y-m-d H-i-s") <= $row['end_date']
+                    if (date("Y-m-d H-i-s") >= $row['display_date'] && $row['hide'] == '0' && $row['reviewed'] == '1') {
                 ?>
                         <div class="notice">
                             <p class="headline"><?php echo $row['headline']; ?></p>
@@ -220,6 +222,65 @@ date_default_timezone_set('Asia/Kolkata');
     </div>
     <!-- achieve end -->
 
+    <!-- vision start -->
+    
+    <div id="vision">
+        <h1>OUR MISSION</h1>
+
+        <div id="autoWidth" class="cs-hidden">
+            <div class="box">
+                    <!-- img-box -->
+                    <div class="slide-img">
+                        <img src="http://mitracomputers.com/assets/img/values-1.png" alt="1">
+                    </div>
+                    <!-- heading -->
+                    <h2 class="detail-head">Discipline</h2>
+                    <!-- detail-box -->
+                    <div class="detail">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia molestiae blanditiis dicta qui, vitae perferendis facilis.</p>
+                    </div>
+            </div>
+            <div class="box">
+                    <!-- img-box -->
+                    <div class="slide-img">
+                        <img src="http://mitracomputers.com/assets/img/values-2.png" alt="1">
+                    </div>
+                    <!-- heading -->
+                    <h2 class="detail-head">Punchuality</h2>
+                    <!-- detail-box -->
+                    <div class="detail">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia molestiae blanditiis dicta qui, vitae perferendis facilis.</p>
+                    </div>
+            </div>
+            <div class="box">
+                    <!-- img-box -->
+                    <div class="slide-img">
+                        <img src="http://mitracomputers.com/assets/img/values-3.png" alt="1">
+                    </div>
+                    <!-- heading -->
+                    <h2 class="detail-head">Smart work</h2>
+                    <!-- detail-box -->
+                    <div class="detail">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia molestiae blanditiis dicta qui, vitae perferendis facilis.</p>
+                    </div>
+            </div>
+            <div class="box">
+                    <!-- img-box -->
+                    <div class="slide-img">
+                        <img src="http://mitracomputers.com/assets/img/values-3.png" alt="1">
+                    </div>
+                    <!-- heading -->
+                    <h2 class="detail-head">Social Ethics</h2>
+                    <!-- detail-box -->
+                    <div class="detail">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia molestiae blanditiis dicta qui, vitae perferendis facilis.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!--  vision end  -->
+
+
     <!-- about start -->
         <div id="about">
             <div id="checklist">
@@ -236,8 +297,39 @@ date_default_timezone_set('Asia/Kolkata');
         </div>
     <!-- about end -->
 
-    <!-- vision start -->
-    <!--  vision end  -->
+    
+    <!-- contact -->
+    <div id="contact">
+        <h1>Contact Us</h1>
+
+        <div id="container">
+            <!-- map -->
+            <div id="googlemap">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.1360360013687!2d86.68822231494738!3d24.48074298423444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f13d8f69fd117b%3A0xe1b6df389bf699b3!2sMCIT!5e0!3m2!1sen!2sin!4v1639472028566!5m2!1sen!2sin" loading="lazy"></iframe>
+            </div>
+
+            <!-- form -->
+            <form class="my-form">
+                <div class="form-group">
+                    <label for="form-name">Name</label>
+                    <input type="email" class="form-control" id="form-name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">Email Address</label>
+                    <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <label for="form-message">Email your Message</label>
+                    <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+                </div>
+                <button class="btn btn-secondary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- contact end -->
 
     <!-- footer -->
     <?php include('footer.php') ?>

@@ -1,4 +1,12 @@
 <?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php");
+    exit;
+}
 //importing connection  
 require_once('config.php');
 
@@ -142,7 +150,7 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Notice Panel</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -152,6 +160,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    <h1 id="head">Notice Administration Panel</h1>
+    <button class="btn btn-primary" type="submit" onclick="window.location.href='welcome.php'">Main Page</button>
     <div class="big-container">
         <div class="container">
             <!-- notice board -->
@@ -165,7 +175,7 @@ if (isset($_POST['submit'])) {
                     while ($row = mysqli_fetch_assoc($query)) {
                         if(date('Y-m-d H-i-s')<=$row['display_date']){echo date('Y-m-d H-i-s').",".$row['display_date'].$row['headline'];};
                         //show the notice if not hidden and display date has reached and not expired and reviewed
-                        if (date("Y-m-d H-i-s") >= $row['display_date'] && date("Y-m-d H-i-s") <= $row['end_date'] && $row['hide'] == '0' && $row['reviewed'] == '1') {
+                        if (date("Y-m-d H-i-s") >= $row['display_date'] && $row['hide'] == '0' && $row['reviewed'] == '1') {
                     
                     ?>
                             <div class="notice">
@@ -174,10 +184,10 @@ if (isset($_POST['submit'])) {
                                 <a class="docs" target="_blank" href="download.php?k=<?php echo $row['file'] ?>"><img src="img/docs.png" alt="docs icon"></a>
                                 <p class="date"><?php echo 'Date:' . date("d-m-Y", strtotime($row['display_date'])); ?></p>
                                 <div class="bttn-group">
-                                    <button class="btn btn-primary" type="submit" name="submit">Review</button>
-                                    <button class="btn btn-warning" type="submit" name="submit">Urgent</button>
-                                    <button class="btn btn-info" type="submit" name="submit">Hide</button>
-                                    <button class="btn btn-danger" type="submit" name="submit">Delete</button>
+                                    <button class="btn btn-primary" type="submit" name="submit" onclick="window.location.href='manipulate.php?k=review&id=<?php  echo $row['Notice no.'] ?>'">Review</button>
+                                    <button class="btn btn-warning" type="submit" name="submit" onclick="window.location.href='manipulate.php?k=urgent&id=<?php  echo $row['Notice no.'] ?>'">Urgent</button>
+                                    <button class="btn btn-info" type="submit" name="submit" onclick="window.location.href='manipulate.php?k=hide&id=<?php  echo $row['Notice no.'] ?>'">Hide</button>
+                                    <button class="btn btn-danger" type="submit" name="submit" onclick="window.location.href='manipulate.php?k=delete&id=<?php  echo $row['Notice no.'] ?>'">Delete</button>
                                 </div>
                             </div>
                     <?php }

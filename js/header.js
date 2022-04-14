@@ -1,33 +1,34 @@
 // for hide and showing the navigation list at right side
 
-    const navSide = document.querySelector('header #main-nav ul.active');
+    const contPre = document.querySelectorAll('.contact-info pre');      //second list
+    const contact = document.querySelector('.contact-info');      //second list
+    const navSide = document.querySelector('header #main-nav');
     const navBtn = document.querySelector('header .nav-btn');
-    const sideHead = document.querySelector('header #main-nav ul.active::before');
-    const hbef = document.querySelector('.h-before');
+    const hbef = document.querySelector('.h-before');    
     let show = false;
-    console.log("i m js")
     
+    navSide.style.borderRight = "0rem";
+    navSide.style.width = "0vw";
+    hbef.style.width = "0vw";
     navBtn.style.cursor = 'pointer';
-
+     
     const hideShow = ()=>{
         if(show == false) {
-            hbef.style.display = "block";
-            navSide.style.display = "flex";
-            navSide.style.flexDirection = "column";
-            navSide.style.justifyContent = "flex-start"; 
-            navSide.style.placeItems = "center"; 
+            navSide.style.width = "55vw";
+            navSide.style.borderRight = "0.3rem solid #c28f37";
+            hbef.style.width = "150vw";
             show = true;
         }
         else{
-            hbef.style.display = "none";
-            navSide.style.display = "none";
+            navSide.style.borderRight = "0rem";
+            navSide.style.width = "0";
+            hbef.style.width = "0";
             show = false;
         }
     }
     
     navBtn.addEventListener('click',hideShow);
     hbef.addEventListener('click',hideShow);
-        
-        
+          
         
         
