@@ -2,69 +2,59 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------HEADER-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=League+Spartan:wght@300;400&family=Mukta:wght@300;400&family=PT+Sans&family=Poppins:wght@300;400&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400&family=Ubuntu&display=swap');
 
 /* Every element of html */
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    height:-moz-fit-content;
+    width: -moz-fit-content
 }
 
-
 /* html element itself */
-
 html {
     font-size: 59%;
 }
 
-
 /* header inside the body of the html element */
-
 header {
     box-shadow: 0rem 0.02rem 0.3rem 0.03rem black;
-    height: fit-content;
+    height: 18.7rem;
     width: 100%;
-    overflow: hidden;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 10rem 9% auto auto;
+    grid-template-rows: 4rem auto 0.7rem 3.8rem auto;
 }
 
-
 /* container of details of contact and "contact" area of header's grid  */
-
 header .contact-info {
-    position: relative;
-    float: right;
-    top: 0;
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    right: 0;
     gap: 6em;
-    width: 75%;
+    width: 80% !important;
     height: fit-content;
-    padding: 1rem;
+    padding: 1rem 2.5rem 1em 1em;
     font-size: 1.5em;
     color: #ffff;
-    background-color: #ff9101;
+    background-color: #002349;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 6% 100%);
 }
 
-
 /* logo container and "logo" area of header grid*/
-
 header .logo {
-    padding-top: 2.5rem;
-    float: left;
-    height: 19.3em;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    padding-top: 1.5rem;
+    height: 16.2rem;
     width: 20em;
-    float: left;
-    /* display: inline-block; */
 }
 
-
 /* image container as logo container of class "logo" */
-
 header .logo .img-container {
     margin: auto;
     height: 11em;
@@ -73,9 +63,7 @@ header .logo .img-container {
     border: 0.1rem solid;
 }
 
-
 /* image inside image container of class "img-container" */
-
 header .logo .img-container img {
     height: 100%;
     width: 100%;
@@ -84,9 +72,7 @@ header .logo .img-container img {
     border: 0.1rem solid;
 }
 
-
 /* name of organization */
-
 header .logo-name {
     text-align: center;
     margin-top: 0.3em;
@@ -95,9 +81,7 @@ header .logo-name {
     font-size: 1.5em;
 }
 
-
 /* moto of the organization */
-
 header .moto {
     text-align: center;
     line-height: 1.3em;
@@ -105,87 +89,137 @@ header .moto {
     font-size: 1em;
 }
 
-header .nav {
-    padding: 16em 0% 0 37%;
+
+#head-text{
+    grid-column: 2 / -1;
+    width: fit-content;
+    padding:1rem 2rem 2rem 17%;
+    grid-row: 2 / span 1;
+    font-size: 3.2rem;
+    color: #002349;    
+    font-weight: bolder;
 }
 
+header .nav-btn{
+    display: none;
+}
 
-/* navigation menu of id 'main-nav' at header under 'nav' class */
-
+/* navigation menu of id 'main-nav' at header */
 header #main-nav {
-    width: 100%;
+    grid-row: 4 / span 2;
+    grid-column: 3 / span 1;
     display: flex;
-    gap: 2.9rem;
+    justify-content: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-weight: bold;
+    padding: 0.8rem 1rem 0 0;
 }
-
 
 /* Anchor or links of div elements of class "nav-item" navigation menu of id 'main-nav'*/
-
-header #main-nav .nav-item a {
-    padding-bottom: 1rem;
+header #main-nav a {
     text-decoration: none;
     color: rgb(122 87 22);
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 1.8rem;
 }
 
+.btn-2{
+    grid-column: 4/ span 1;
+    grid-row: 3 / span 1;
+    text-align: center;
+    padding:0 1rem 2rem 1rem;
+}
+
+header #login-btn{
+    word-break: keep-all;
+    border: 0.1rem solid #002349;
+    color: white;
+    background-color:  #002349;
+    border-radius: 0.4rem;    
+    height: 3.7rem;
+    width: 12rem; 
+    font-size: 1.5rem;
+}
+
+header #login-btn:hover{
+    background-color: #033b77;
+    border-bottom: none;
+    cursor: pointer;
+}
 
 /* when hovered over div elements of class "nav-item" */
-
-header #main-nav .nav-item:hover {
-    text-decoration: none;
-    color: rgb(120 95 4);
-    border-bottom: 2px solid;
-}
-
-.h-before {
-    display: none;
+header #main-nav a:hover {
+    color: rgb(182, 141, 6);
 }
 
 
 /* --------------------------------------------------------------------------------------------------------
 -----------------------------for phone------------------------------------------------------------- */
+@media (max-width:1100px) and (min-width:701px) {
+    html{
+        font-size: 56%;
+    }   
+}
 
-@media screen and (max-width: 600px) {
-    html {
-        font-size: 53.8%;
+@media(max-width: 700px) {
+    html{
+        font-size: 53%;
     }
-    header #main-nav {
+    header{
+        height :25rem;  
+        grid-template-rows: 4rem 14rem 7rem;
+    }
+    #head-text{
+	  padding-top:5rem;
+        font-size: 2.5rem;
+        grid-column: 2 / -1;
+    }
+    header #main-nav {        
         display: flex;
         flex-direction: column;
         place-items: center;
+        justify-content: center;
         background-color: white;
         height: 100%;
+        width: 0 !important;
         position: fixed;
-        padding-top: 9em !important;
-        gap: 2em !important;
         top: 0;
         left: 0;
         overflow-x: hidden;
         z-index: 1;
         opacity: 0.8;
         transition: 0.4s;
+        padding: 0 !important;
         margin: 0 !important;
+    } 
+
+    header .btn-2{
+        grid-row: 3 / span 1;
+        padding-top: 2.2rem;
     }
+
     .logo {
-        padding-top: 4em !important;
-        width: 17em !important;
+        grid-row: 2 /span 1 !important;
+        width: 15em !important;
     }
+
     .logo .img-container {
-        height: 8em !important;
-        width: 8em !important;
+        height: 9.5em !important;
+        width: 9.5em !important;
     }
+
     .contact-info {
         display: flex;
         flex-direction: column;
-        font-size: 1.4em !important;
+        font-size: 1.4rem !important;
         gap: 0.5rem !important;
-        width: 64% !important;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%) !important;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 15% 100%) !important;
     }
+
     .contact-info pre {
         text-align: right;
     }
+
     /* background of navbar for screens max-width 600px */
     .h-before {
         height: 100%;
@@ -197,17 +231,18 @@ header #main-nav .nav-item:hover {
         z-index: 0;
         transition: .01s;
     }
+
     /* div of class "nav-btn" for screens max-width 600px */
     header .nav-btn {
-        display: block !important;
+        display: block;
+        padding:0.5rem 0 0 3rem;
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+        font-size: 4.5rem;
         color: #c28f37;
-        background-color: transparent;
-        position: absolute;
-        top: 10em;
-        right: 12vw;
+        cursor:pointer;    
     }
 }
-
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------HEADER ENDS-------------------------------------------------------------------------------------------------------------------------
